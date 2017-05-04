@@ -1,3 +1,12 @@
+function IsHelpCommand($value) {
+	if ($value -eq '/?') { return $true };
+	if ($value -eq '-?') { return $true };
+	if ($value -eq '-h') { return $true };
+	if ($value -eq '--help') { return $true };
+
+	return $false;
+}
+
 function unresolve() {
 	git checkout --conflict=merge --
 }
@@ -85,9 +94,23 @@ function pub()  {
 	git publish
 }
 
-# git add
 function a() {
-	git add
+<#
+.SYNOPSIS
+git add
+
+.DESCRIPTION
+Stages files by the supplied wildcard. Equivalent to `git add`
+#>
+param (
+	$wildcard
+)
+	if (IsHelpCommand($wildcard)) {
+		Get-Help a
+		return
+	}
+	
+	git add $wildcard
 }
 
 function au() {
