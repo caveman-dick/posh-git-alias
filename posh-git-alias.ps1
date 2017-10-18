@@ -125,6 +125,10 @@ function ai() {
 	git add --interactive
 }
 
+function agi() {
+	Invoke-WebRequest https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore -Outfile .gitignore
+}
+
 function ap() {
 	git add --patch
 }
