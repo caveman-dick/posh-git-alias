@@ -163,8 +163,8 @@ function f() {
 }
 
 # git rebase
-function r() {
-	git rebase --interactive
+function rebase() {
+	git rebase --interactive $args[0]
 }
 
 function rc() {
