@@ -81,7 +81,9 @@ function pru() {
 
 function pro() {
 	git fetch origin
+	git stash
 	git rebase origin/master
+	git stash pop
 }
 
 function mpull() {
