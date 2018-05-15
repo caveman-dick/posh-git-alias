@@ -310,3 +310,11 @@ function cleanf() {
 function review-files() {
 	git log --name-only --max-count=1
 }
+
+function stash() {
+	git stash
+}
+
+function pop() {
+	git stash pop
+}
