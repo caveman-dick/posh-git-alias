@@ -241,7 +241,8 @@ function po() {
 }
 
 function pof() {
-	git push origin --force
+	$branch = &git rev-parse --abbrev-ref HEAD
+	&git push origin --force --set-upstream $branch
 }
 
 # git log
