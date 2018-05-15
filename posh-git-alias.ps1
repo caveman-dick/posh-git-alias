@@ -63,7 +63,7 @@ function b() {
 }
 
 function bc() {
-	git checkout -b
+	git checkout -b $args[0]
 }
 
 function brs() {
